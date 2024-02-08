@@ -1,8 +1,8 @@
-# Welcome to AwesomeJavaProject!
+# Welcome to Java interview notes and drills!
 
 ## About
-This project is the epitome of Java brilliance!
-Dive into the world of Java excellence and witness the magic unfold.
+This project is tools and drills that help me to study for an interview with java. 
+Dive into the world of Java excellence and witness the magic unfold 🪰.
 
 [//]: # (## Features)
 

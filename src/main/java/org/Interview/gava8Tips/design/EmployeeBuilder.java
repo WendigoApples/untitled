@@ -12,7 +12,7 @@ import org.Interview.gava8Tips.Employee;
 
 public class EmployeeBuilder {
 
-
+// Using this will help you to build mock_data
         public static void main(String[] args) {
             List<Employee> list = new ArrayList<>();
 
