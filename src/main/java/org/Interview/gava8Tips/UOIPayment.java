@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+
+
 @FunctionalInterface
 public interface UOIPayment {
 
@@ -39,6 +41,11 @@ public interface UOIPayment {
                 sorted(Comparator.comparingInt(Employee::getSalary).reversed()).
                 collect(Collectors.toList());
         sortedBySalary.forEach(n -> System.out.println("\nEmployees sorted by ID: " + n));
+
+//  FixMe
+//        DataBase.getEmployees().stream().sorted().Comparator.comparingInt(Employee::getSalary).reversed()).
+//        collect(Collectors.toList());
+//        sortedBySalary.forEach(n -> System.out.println("\nEmployees sorted by ID: " + n));
     }
 
     default void accendingEmpIdNum(){

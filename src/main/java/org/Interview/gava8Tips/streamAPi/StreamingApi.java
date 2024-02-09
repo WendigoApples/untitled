@@ -23,12 +23,28 @@ public class StreamingApi {
 //        but once you use it you cant us it again
 //        dataStream.forEach(n -> System.out.println(n));
 
-        Stream<Integer> sortedData = dataStream.sorted();
-        sortedData.forEach(n -> System.out.println(n));
+//        Stream<Integer> sortedData = dataStream.sorted();
+//        sortedData.forEach(n -> System.out.println(n));
+
+//        Stream<Integer> smoothSort = nums.stream().sorted();
+//        smoothSort.forEach(n -> System.out.println(n));
 
 
+//  1 Double each object in stream
+//       Stream<Integer> mappedData = dataStream.map(n -> n * 2);
+//       mappedData.forEach(n -> System.out.println(n));
 
-
+// // Example of lambda
+//        for(int n : nums) {
+//            System.out.println(n * 2);
+//        }
+// 2
+//        Stream<Integer> mappedData = nums.stream().map(n -> n * 2);
+//        mappedData.forEach(n -> System.out.println(n));
+// 3
+        nums.stream().
+                map(n -> n * 2).
+                forEach((n -> System.out.println(n)));
 
 //-----------> footNotes
         // When working with lots of data or  multiple threads its always better to have

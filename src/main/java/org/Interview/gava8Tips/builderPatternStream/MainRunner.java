@@ -1,15 +1,8 @@
 package org.Interview.gava8Tips.builderPatternStream;
 
 
-
-import jdk.internal.classfile.Interfaces;
-import org.Interview.gava8Tips.DataBase;
-import org.Interview.gava8Tips.Employee;
-
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class MainRunner {
