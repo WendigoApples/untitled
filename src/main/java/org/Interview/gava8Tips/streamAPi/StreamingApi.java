@@ -5,12 +5,13 @@ import org.Interview.gava8Tips.Employee;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class StreamingApi {
 
     public static void main(String[] args) {
-        List<Integer> nums = Arrays.asList(4,6,7,5,8,9);
+        List<Integer> nums = Arrays.asList(8,4,7,9,6,3);
 //        nums.forEach(n -> System.out.println(n));
 
 
@@ -42,9 +43,24 @@ public class StreamingApi {
 //        Stream<Integer> mappedData = nums.stream().map(n -> n * 2);
 //        mappedData.forEach(n -> System.out.println(n));
 // 3
-        nums.stream().
-                map(n -> n * 2).
-                forEach((n -> System.out.println(n)));
+
+        Predicate<Integer> predi = new Predicate<Integer>() {
+            @Override
+            public boolean test(Integer n) {
+                if(n%2==1)
+                    return true;
+                else
+                    return false;
+            }
+
+        };   // using an object of predicate
+
+
+        nums.stream()
+                .filter(n -> n%2==1 )// only odd numbers
+                .sorted()
+                .map(n -> n * 2)
+                .forEach((n -> System.out.println(n)));
 
 //-----------> footNotes
         // When working with lots of data or  multiple threads its always better to have

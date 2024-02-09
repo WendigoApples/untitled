@@ -3,6 +3,7 @@ package org.Interview.gava8Tips.builderPatternStream;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public class MainRunner {
@@ -24,11 +25,37 @@ public class MainRunner {
 //        at org.Interview.gava8Tips.builderPatternStream.MainRunner.main(MainRunner.java:19)
 
 
+        Predicate<Integer> predi = new Predicate<Integer>() {
+            @Override
+            public boolean test(Integer n) {
+                if(n%2==1)
+                    return true;
+                else
+                    return false;
+            }
+
+        };   // using an object of predicate
+        nums.stream()
+                .filter(predi)// only odd numbers
+                .sorted()
+                .map(n -> n * 2)
+                .forEach((n -> System.out.println(n)));
 
 
+        Predicate<Integer> pre = n -> n%2==1;   // lambda
+        nums.stream()
+                .filter(pre)
+                .sorted()
+                .map(n -> n * 2)
+                .forEach((n -> System.out.println(n)));
 
 
-
+// ----> without lambda and without using object less code
+        nums.stream()
+                .filter(n -> n%2==1 )// only odd numbers
+                .sorted()
+                .map(n -> n * 2) // double the number
+                .forEach((n -> System.out.println(n)));
 
 
 

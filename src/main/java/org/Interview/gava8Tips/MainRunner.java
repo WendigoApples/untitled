@@ -18,9 +18,6 @@ public class MainRunner {
 
     public static void main(String[] args) {
 
-
-
-
         List<Employee> employees = Stream.of(
                 new Employee(1, "Bob", "DEV", 990000),
                 new Employee(2, "Jess", "QA", 78000),
@@ -33,20 +30,30 @@ public class MainRunner {
 
 // ---->
         // Group list by department and print it out
-        Map<String, List<Employee>> employeeMapp = employees.stream().collect(groupingBy(Employee::getDept));
-        System.out.println(employeeMapp);
+//        Map<String, List<Employee>> employeeMapp = employees.stream().collect(groupingBy(Employee::getDept));
+//        System.out.println(employeeMapp);
+//
+//        Comparator<Employee> compareBySalary = Comparator.comparing(Employee::getSalary);
+//        // Group list by department and print it out
+//        Map<String, Optional<Employee>> employeeMap = employees.stream().
+//                collect(
+//                        groupingBy(Employee::getDept,
+//                                Collectors.reducing(BinaryOperator.maxBy(compareBySalary)))
+//                );
+//        System.out.println(employeeMap);
 
-        Comparator<Employee> compareBySalary = Comparator.comparing(Employee::getSalary);
-        // Group list by department and print it out
-        Map<String, Optional<Employee>> employeeMap = employees.stream().
-                collect(
-                        groupingBy(Employee::getDept,
-                                Collectors.reducing(BinaryOperator.maxBy(compareBySalary)))
-                );
-        System.out.println(employeeMap);
 
 
+        List<Employee> employeeSalary = DataBase.getEmployees();  //    Sort better this better
+//        employees.forEach(n-> System.out.println(n));
 
+        List<Employee> sortedBySalary = employeeSalary.stream()
+                .sorted(Comparator.comparingInt(Employee::getSalary).reversed())
+                .collect(Collectors.toList());
+        sortedBySalary.forEach(n -> System.out.println("\nEmployees sorted by ID: " + n));
+
+
+//        List<Employee> ep = employees.
 
 
     }
