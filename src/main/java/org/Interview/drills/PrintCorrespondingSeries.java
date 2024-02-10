@@ -2,47 +2,59 @@ package org.Interview.drills;
 
 import java.util.*;
 import java.io.*;
+
 public class PrintCorrespondingSeries {
 
 
-// we use the integers a,b, and n to create the follwing series
-
-    public static void main(String []argh){
+    public static void main(String[] argh) {
+        // Create a Scanner object that reads the input from the console
         Scanner in = new Scanner(System.in);
-        int t=in.nextInt();
-        for(int i=0;i<t;i++){
-            // Each cycle that this will move into
+
+        // Reads the number of queries that (t) has from the console
+        int t = in.nextInt();
+
+        // Loop through each query
+        for (int i = 0; i < t; i++) {
+            // Reading the values of a, b, and n to store in current query
             int a = in.nextInt();  // Cycle One
             int b = in.nextInt();  // Cycle two
             int n = in.nextInt();  // Cycle three
 
-// wrong
-////  Frist we must print this out for the series that the current state of the query
-//            for ( int x = 0; x < n; n++) {
-//                int cycle = a; // We must start with the Cycle one
-//                for(int f = 0; f <= n; f++) {
-//                    cycle += Math.pow(2, f) * b;
-//                }
-//                System.out.println(cycle + " ");
-//            }
-//            System.out.println();
-            printSeries(a, b, n);
+            // Call on the printMe method with the read values of a, b, and n
+            printMe(a, b, n);
         }
+
+        // This isn't always needed but in this drill we close the Scanner object to release resources
         in.close();
     }
-//    private static void printSeries(int a, int b, int n) {
-//        int term = a;
-//        for (int j = 0; j < n; j++) {
-//            term += (int)Math.pow(2, j) * b;
-//            System.out.print(term + " ");
 
+    // Method to print the series for given values of a, b, and n
+    private static void printMe(int a, int b, int n) {
+        // Initialize the sum to the value of a
+        int sum = a;
 
+        // Looping through each of the terms in the series
+        for (int i = 0; i < n; i++) {
+            // Calculating what the next term will be in the series using the formula: sum = a + 2^i * b
+            sum += Math.pow(2, i) * b;
+
+            // What the current cycle of the series followed by a space
+            System.out.print(sum + " ");
         }
-//        System.out.println();
+
+        // Move to the next line after printing all the terms of the series for the current query
+        System.out.println();
     }
 }
 
 
-
-}
-
+//Input (stdin)
+//2
+//        0 2 10
+//        5 3 5
+//Your Output (stdout)
+//2 6 14 30 62 126 254 510 1022 2046
+//        8 14 26 50 98
+//Expected Output
+//2 6 14 30 62 126 254 510 1022 2046
+//        8 14 26 50 98
