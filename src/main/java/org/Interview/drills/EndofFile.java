@@ -1,6 +1,6 @@
 package org.Interview.drills;
 
-import java.io.*;
+
 import java.util.*;
 
 
@@ -37,10 +37,13 @@ public class EndofFile {
                 System.out.println(lineNums[0]++ + " " + lineInput);
             });
 
+;
+            }
 
 
 
-        }
+
+
 
 
 }
