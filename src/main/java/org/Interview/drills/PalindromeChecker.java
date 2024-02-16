@@ -10,7 +10,7 @@ public class PalindromeChecker {
         String[] testForPalindrome = {"CHEESE", "heLLo", "Pop", "Kids", "Mom"};
 
         // To check if this is a palindrome this will define a predicate lambda to check
-        Predicate<String> isPalindrome = (str) -> {
+        Predicate<String> isPalindrome = str -> {
             // This converts the string to lowercase to handle case-insensitivity
             str = str.toLowerCase();
 

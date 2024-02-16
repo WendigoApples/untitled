@@ -1,11 +1,9 @@
 package org.Interview.gava8Tips;
 
 
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.BinaryOperator;
+import java.util.function.Predicate;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -17,6 +15,17 @@ public class MainRunner {
 
 
     public static void main(String[] args) {
+
+
+        List<Integer> list = Arrays.asList(2,4,6,86,1,56,12,5);
+
+//       filter numbers > 4 // 6, 86,56,12,5
+//       sort 5,6,12,56,86
+// ToDo dive deeper into the use of the functional interface Predicate
+        Predicate<Integer> predicate = t -> t>4;
+
+        list.stream().filter(t-> t>4).sorted().forEach(System.out::println);
+
 
         List<Employee> employees = Stream.of(
                 new Employee(1, "Bob", "DEV", 990000),
@@ -43,14 +52,15 @@ public class MainRunner {
 //        System.out.println(employeeMap);
 
 
+//// Todo dive deepring into the us of Comparator
 
-        List<Employee> employeeSalary = DataBase.getEmployees();  //    Sort better this better
-//        employees.forEach(n-> System.out.println(n));
-
-        List<Employee> sortedBySalary = employeeSalary.stream()
-                .sorted(Comparator.comparingInt(Employee::getSalary).reversed())
-                .collect(Collectors.toList());
-        sortedBySalary.forEach(n -> System.out.println("\nEmployees sorted by ID: " + n));
+//        List<Employee> employeeSalary = DataBase.getEmployees();  //    Sort better this better
+//////        employees.forEach(n-> System.out.println(n));
+//
+//        List<Employee> sortedBySalary = employeeSalary.stream()
+//                .sorted(Comparator.comparingInt(Employee::getSalary).reversed())
+//                .collect(Collectors.toList());
+//        sortedBySalary.forEach(n -> System.out.println("\nEmployees sorted by ID: " + n));
 
 
 //        List<Employee> ep = employees.
