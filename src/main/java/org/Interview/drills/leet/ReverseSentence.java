@@ -31,7 +31,7 @@ public class ReverseSentence {
     }
 
 
-//// Take 2
+//// Take 2  ----> PASS
     static String reverseWordsShort (String s) {
         String[] sentence = s.split(" +"); // " +" do this when the amount of spaces is more than 1
         StringBuilder flex = new StringBuilder();
@@ -53,6 +53,17 @@ public class ReverseSentence {
     }
 
 
+
+
+    static String reverseWordsShortLAM (String s) {
+        String[] sentence = s.split(" +"); // " +" do this when the amount of spaces is more than 1
+        StringBuilder flex = new StringBuilder();
+        for(int i = sentence.length - 1; i>=0; i--) {
+            flex.append(sentence[i]);
+            flex.append(" ");
+        }
+        return flex.toString().trim();
+    }
 
 
 
