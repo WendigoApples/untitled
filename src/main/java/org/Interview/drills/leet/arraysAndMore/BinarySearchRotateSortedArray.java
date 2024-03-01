@@ -7,6 +7,7 @@ public class BinarySearchRotateSortedArray {
 
     public static int search(int[] nums, int target) {
 
+
         int low = 0, high = nums.length - 1;
 
         while (low <= high) {
@@ -66,6 +67,13 @@ public class BinarySearchRotateSortedArray {
         } else {
             System.out.println("Target " + target + " not found");
         }
+
+
+
+
+//   ------> Below is the easy way to do it
+//        System.out.println(Arrays.binarySearch(nums, target));
+
 
     }
 
