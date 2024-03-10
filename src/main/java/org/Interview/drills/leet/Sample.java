@@ -34,18 +34,18 @@ public class Sample {
 
 
         }
-
-    public static void main(String[] args) {
-        ProductsOfArrayExceptSelf paes = new ProductsOfArrayExceptSelf();
-        ProductsOfArrayExceptSelf.SolveMe solveMe = paes.new SolveMe();
-        int[] nums1 = {1, 2, 3, 4};
-        int[] result1 = solveMe.productsOfArray(nums1);
-        System.out.println("Output for nums1: " + Arrays.toString(result1)); // Output: [24, 12, 8, 6]
-
-        int[] nums2 = {-1, 1, 0, -3, 3};
-        int[] result2 = solveMe.productsOfArray(nums2);
-        System.out.println("Output for nums2: " + Arrays.toString(result2)); // Output: [0, 0, 9, 0, 0]
-    }
+//
+//    public static void main(String[] args) {
+//        ProductsOfArrayExceptSelf paes = new ProductsOfArrayExceptSelf();
+//        ProductsOfArrayExceptSelf.SolveMe solveMe = paes.new SolveMe();
+//        int[] nums1 = {1, 2, 3, 4};
+//        int[] result1 = solveMe.productsOfArray(nums1);
+//        System.out.println("Output for nums1: " + Arrays.toString(result1)); // Output: [24, 12, 8, 6]
+//
+//        int[] nums2 = {-1, 1, 0, -3, 3};
+//        int[] result2 = solveMe.productsOfArray(nums2);
+//        System.out.println("Output for nums2: " + Arrays.toString(result2)); // Output: [0, 0, 9, 0, 0]
+//    }
 
 
 }
