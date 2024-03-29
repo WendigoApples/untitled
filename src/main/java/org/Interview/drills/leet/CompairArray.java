@@ -28,7 +28,7 @@ public class CompairArray {
 //    }
 
 
-    public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
+    public List<List<Integer>> findDifference2(int[] nums1, int[] nums2) {
 
         Set<Integer> set1 = new HashSet<>();
         Set<Integer> set2 = new HashSet<>();
@@ -59,4 +59,38 @@ public class CompairArray {
         return listAns;
 
     }
+
+
+
+    public List<List<Integer>> findDifference3(int[] nums1, int[] nums2) {
+
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
+
+        for (int num : nums1) {
+            set1.add(num);
+            System.out.printf("Num is: %d\n  Nums1 is: %s%n", num, nums1);
+        }
+        for (int num : nums2) {
+            set2.add(num);
+            System.out.println("Num is: " + num + "\n " + " Nums2 is: " + nums2);
+        }
+
+        List<List<Integer>> listAns = new ArrayList<>(2);
+
+        listAns.add(new ArrayList<>(set1));
+        listAns.add(new ArrayList<>(set2));
+
+        // Retain only the differences in the lists
+        listAns.get(0).removeAll(set2);
+        listAns.get(1).removeAll(set1);
+
+        return listAns;
+    }
+
+
+
+
+
+
 }
