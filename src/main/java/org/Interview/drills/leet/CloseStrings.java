@@ -45,7 +45,6 @@ public class CloseStrings {
 
     public static void main(String[] args) {
 
-        public static void main(String[] args) {
             String word1 = "abc";
             String word2 = "bca";
             CloseStrings solution = new CloseStrings();
@@ -61,7 +60,6 @@ public class CloseStrings {
             word2 = "abbccc";
             result = solution.similarStrings(word1, word2);
             System.out.println("Example 3: " + result);
-        }
 
     }
 
