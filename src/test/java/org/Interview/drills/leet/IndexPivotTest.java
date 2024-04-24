@@ -1,4 +1,4 @@
-package org.Interview.drills.texAdventure.leet;
+package org.Interview.drills.leet;
 
 import org.Interview.drills.leet.IndexPivot;
 import org.junit.Test;

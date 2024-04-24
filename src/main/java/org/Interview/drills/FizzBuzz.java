@@ -35,6 +35,8 @@ public class FizzBuzz {
     }
 
     public static void main(String[] args) {
+
+
         fizzBuzz();
 
         Scanner scanner = new Scanner(System.in);
